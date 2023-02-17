@@ -34,6 +34,7 @@ body {
 .servicesText.card {
     height: 280px;
     cursor: pointer;
+  
   }
   .servicesIcon {
     font-size: 36px;
@@ -72,20 +73,20 @@ body {
     }
   
 
-  
-
-
-#Contatti {
+ #Contatti {
     padding-bottom: 4rem;
 }
 .list-group-item{
   font-weight: bold;
- 
-
+}
+.list-group-item:hover{
+  color:#00807a;
 }
 .card-title{
   text-decoration: underline;
 }
+
+
 
 
   
