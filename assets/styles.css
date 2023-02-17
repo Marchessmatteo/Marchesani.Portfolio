@@ -1,6 +1,4 @@
-body {
-  background-color: #5fb5ef;
-}
+
 
 .bgimage{
     height:100vh;
@@ -40,6 +38,9 @@ body {
     font-size: 36px;
     text-align: center;
     width: 100%;
+}
+.fa-info-circle:hover, .fa-layer-group:hover{
+  color:#00807a; 
 }
   .card-title{
     text-align: center;
@@ -85,9 +86,8 @@ body {
 .card-title{
   text-decoration: underline;
 }
-.btn-success {
-  background-color: #FF0000;
-}
+
+
 
 
 
