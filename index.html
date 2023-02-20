@@ -169,6 +169,7 @@
                         </div>
                     </form>
                           <button type="button" id="submit-btn" class="btn btn-primary mt-3">Contattami</button>
+                          <p id="feedback"></p>
                 </section>
                 
 
@@ -205,12 +206,14 @@
       emailjs.send('service_tnba52n', 'template_9dcyoxu', templateParams)
         .then(function(response) {
           console.log('SUCCESS!', response.status, response.text);
+          document.getElementById('feedback').innerHTML = "Email inviata con successo";
         }, function(error) {
           console.log('FAILED...', error);
+          document.getElementById('feedback').innerHTML = "Errore nell'invio dell'email";
         });
     });
   </script>
-  
+
          
 
 
