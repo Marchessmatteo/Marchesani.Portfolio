@@ -86,8 +86,10 @@
 .card-title{
   text-decoration: underline;
 }
-
-
+#feedback {
+  color: red;
+  font-family: sans-serif;
+}
 
 
 
