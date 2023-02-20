@@ -87,8 +87,16 @@
   text-decoration: underline;
 }
 #feedback {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
   color: red;
-  font-family: sans-serif;
 }
 
 
