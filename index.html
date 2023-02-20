@@ -193,7 +193,10 @@
         emailjs.init("Y2T1vZ5uXHo1PLXJZ");
       })();
     </script>
-    
+    <script>
+        emailjs.sendForm("service_tnba52n", "template_9dcyoxu", "#myForm")
+        </script>
+        
         <script>
             // listen to the form submission
             document
@@ -205,7 +208,7 @@
                 const templateID = "template_9dcyoxu";
       
                 // send the email here
-                emailjs.sendForm(service_tnba52n,template_9dcyoxu , this).then(
+                emailjs.sendForm(serviceID,templateID , this).then(
                   (response) => {
                     console.log("SUCCESS!", response.status, response.text);
                     alert("SUCCESS!");
