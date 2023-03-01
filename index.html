@@ -160,12 +160,11 @@
                      <div class="col-lg-6">
                         
                         <form id="myForm">
-                            
-                            <input type="text" class="form-control form-control-lg" placeholder="Nome" name="Nome" required>
-                            <input type="email" class="form-control mt-3" placeholder="Email" name="Email" required>
-                            <input type="text" class="form-control mt-3" placeholder="Argomento" name="Argomento" required>
-                        <div class="mb-3 mt-3">
-                            <textarea class="form-control" rows="5" id="comment" name="Dettagli" placeholder="Dettagli" required></textarea>
+                            <input type="text" class="form-control form-control-lg" placeholder="Nome" name="Nome" required pattern="[A-Za-z\s]+" data-error="Inserisci il tuo nome">
+<input type="email" class="form-control mt-3" placeholder="Email" name="Email"  required data-error="Inserisci la tua Email">
+<input type="text" class="form-control mt-3" placeholder="Argomento" name="Argomento"  required pattern="[A-Za-z\s]+" data-error="Inserisci l'argomento del messaggio">
+                       <div class="mb-3 mt-3">
+                            <textarea class="form-control" rows="5" id="comment" name="Dettagli" placeholder="Dettagli"  required pattern="^[A-Za-z\s]+$" data-error="Inserisci i dettagli del messaggio"></textarea>
                         </div>
                     </form>
                           <button type="button" id="submit-btn" class="btn btn-primary mt-3">Contattami</button>
@@ -192,31 +191,52 @@
     })();
   </script>
   <script>
-    document.getElementById('submit-btn').addEventListener('click', function(event) {
-      event.preventDefault();
-      // prendi i dati della form
-      var templateParams = {
-        Nome: document.getElementById('myForm').elements[0].value,
-        Email: document.getElementById('myForm').elements[1].value,
-        Argomento: document.getElementById('myForm').elements[2].value,
-        Dettagli: document.getElementById('myForm').elements[3].value
-      };
-  
-      // invia l'email utilizzando EmailJS
-      emailjs.send('service_tnba52n', 'template_9dcyoxu', templateParams)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          document.getElementById('feedback').innerHTML = "Email inviata con successo";
-        }, function(error) {
-          console.log('FAILED...', error);
-          document.getElementById('feedback').innerHTML = "Errore nell'invio dell'email";
-        });
+document.getElementById('submit-btn').addEventListener('click', function(event) {
+  event.preventDefault();
+  // prendi i dati della form
+  var nome = document.getElementById('myForm').elements[0].value.trim();
+  var email = document.getElementById('myForm').elements[1].value.trim();
+  var argomento = document.getElementById('myForm').elements[2].value.trim();
+  var dettagli = document.getElementById('myForm').elements[3].value.trim();
+
+  // verifica che i campi non siano vuoti o contengano solo spazi o caratteri speciali
+  if (nome === '' || !/^[a-zA-Z\s]+$/.test(nome)) {
+    document.getElementById('feedback').innerHTML = "Inserisci un nome valido";
+    return;
+  }
+  if (email === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('feedback').innerHTML = "Inserisci un'email valida";
+    return;
+  }
+  if (argomento === '' || !/^[a-zA-Z\s]+$/.test(argomento)) {
+    document.getElementById('feedback').innerHTML = "Inserisci un argomento valido";
+    return;
+  }
+  if (dettagli === '' || !/^[a-zA-Z\s.,?!]+$/.test(dettagli)) {
+    document.getElementById('feedback').innerHTML = "Inserisci dei dettagli validi";
+    return;
+  }
+
+  var templateParams = {
+    Nome: nome,
+    Email: email,
+    Argomento: argomento,
+    Dettagli: dettagli
+  };
+
+  emailjs.send('service_tnba52n', 'template_9dcyoxu', templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      document.getElementById('feedback').innerHTML = "Email inviata con successo";
+    }, function(error) {
+      console.log('FAILED...', error);
+      document.getElementById('feedback').innerHTML = "Errore nell'invio dell'email";
     });
-  </script>
+});
 
 
 
-
+</script>
     
   </body>
 </html>
