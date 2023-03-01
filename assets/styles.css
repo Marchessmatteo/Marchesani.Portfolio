@@ -51,6 +51,38 @@
 .navbarScroll.navbarDark {
     background-color: black;
 }
+#google-maps-display {
+  text-decoration: none;
+  overflow: hidden;
+  max-width: 100%;
+  width: 500px;
+  height: 500px;
+}
+
+#google-maps-display iframe {
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.from-embedmap-code {
+  text-decoration: none;
+}
+
+#make-map-infor-mation {
+  display: none;
+}
+
+#google-maps-display img.text-marker {
+  max-width: none !important;
+  background: none !important;
+}
+
+img {
+  max-width: none;
+}
+
+
 .fa {
     padding: 20px;
   font-size: 30px;
