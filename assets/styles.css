@@ -1,4 +1,6 @@
-
+.bg-miocolor {
+  background-color: black;
+   }
 
 .bgimage{
     height:100vh;
@@ -40,13 +42,13 @@
     width: 100%;
 }
 .fa-info-circle:hover, .fa-layer-group:hover{
-  color:#00807a; 
+  color:black; 
 }
   .card-title{
     text-align: center;
   }
   .servicesText:hover {
-    border: 2px solid #00807a;
+    border: 3px solid black;
 }
 .navbarScroll.navbarDark {
     background-color: black;
@@ -113,23 +115,33 @@ img {
   font-weight: bold;
 }
 .list-group-item:hover{
-  color:#00807a;
+  color:black;
 }
 .card-title{
   text-decoration: underline;
 }
 #feedback {
-  font-weight: bold;
-  margin-top: 10px;
+  font-size: 30px;
 }
 
-.success {
+#feedback.success {
   color: green;
 }
 
-.error {
+#feedback.error {
   color: red;
 }
+
+
+
+
+p, .row.mt-3, .text-center {
+  color:white;
+}
+.card {
+  box-shadow: 0 0 10px white;
+}
+
 
 
 
