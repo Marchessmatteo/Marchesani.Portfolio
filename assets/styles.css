@@ -47,9 +47,10 @@
   .card-title{
     text-align: center;
   }
-  .servicesText:hover {
+  .servicesText:hover, .card:hover {
     border: 3px solid black;
 }
+
 .navbarScroll.navbarDark {
     background-color: black;
 }
@@ -139,9 +140,21 @@ p, .row.mt-3, .text-center {
   color:white;
 }
 .card {
-  box-shadow: 0 0 10px white;
+  box-shadow: 0 0 15px white;
 }
-
+div.card-body > p {
+  color: black;
+  text-align: center;
+}
+#servizi .container {
+  padding-top: 50px;
+}
+#progetti .container{
+  padding-top: 50px;
+}
+.text-center{
+  padding-top: 50px;
+}
 
 
 
