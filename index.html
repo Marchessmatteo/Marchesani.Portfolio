@@ -173,7 +173,7 @@
 <input type="email" class="form-control mt-3" placeholder="Email" name="Email"  required data-error="Inserisci la tua Email">
 <input type="text" class="form-control mt-3" placeholder="Argomento" name="Argomento"  required pattern="[A-Za-z\s]+" data-error="Inserisci l'argomento del messaggio">
                        <div class="mb-3 mt-3">
-                            <textarea class="form-control" rows="5" id="comment" name="Dettagli" placeholder="Dettagli"  required pattern="^[A-Za-z\s]+$" data-error="Inserisci i dettagli del messaggio"></textarea>
+                            <textarea class="form-control" rows="5" id="comment" name="Dettagli" placeholder="Dettagli"  required pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s,.]+$"                             data-error="Inserisci i dettagli del messaggio"></textarea>
                         </div>
                     </form>
                           <button type="button" id="submit-btn" class="btn btn-primary mt-3">Contattami</button>
@@ -225,7 +225,7 @@ document.getElementById('submit-btn').addEventListener('click', function(event) 
     document.getElementById('feedback').innerHTML = "Inserisci un argomento valido";
     return;
   }
-  if (dettagli === '' || !/^[a-zA-Z\s.,?!]+$/.test(dettagli)) {
+  if (dettagli === '' || !/^[[A-Za-zÀ-ÖØ-öø-ÿ\s,.]+$/.test(dettagli)) {
     document.getElementById('feedback').innerHTML = "Inserisci dei dettagli validi";
     return;
   }
