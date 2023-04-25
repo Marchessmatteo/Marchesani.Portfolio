@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="shortcut icon" href="assets/favicon-32x32.png">
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script src="assets/script.js"></script>
+    
  </head>
   <body class="bg-miocolor">
     
@@ -65,14 +65,11 @@
                     <div class="row mt-4">
                         <div class="col-lg-4">
                             <img src="assets/img/ima.prof.jpeg" class= "imageAboutPage" alt="Immagine profilo">
+                            <a href="./assets/img/cv.pdf">IL mio CV</a>
                         </div>
         
                         <div class="col-lg-8">
-                            <p> Salve! 
-                                Il mio nome è Matteo Marchesani, ho ventiquattro anni e vivo in un paesino di nome Toffia, situato nella provincia di Rieti.
-                                Attualmente lavoro in una Società per azioni che si occupa della vendita di elettro forniture.
-                                La mia mansione principale è la gestione di vendite online tramite sito web. Grazie a questo lavoro ho avuto una fonte d’ispirazione nell’ambito del mondo digitale.
-                                Ho un solo obiettivo; diventare un Full Stack Development, oggi sono qui per mostrare il mio primo progetto.</p>
+                            <p> Salve! Sono Matteo Marchesani, ho ventiquattro anni e risiedo nel paese di Toffia, in provincia di Rieti. Attualmente lavoro presso una Società per azioni che si occupa della vendita di elettro forniture. La mia responsabilità principale consiste nella gestione delle vendite online attraverso il sito web dell'azienda. Questa esperienza mi ha ispirato e ha aumentato il mio interesse per il mondo digitale.</p>
                                 
                             <div class="row mt-3">
                                 <div class="col">
@@ -184,9 +181,7 @@
                         </div>
                 </section>
                 
-
-            
-            <footer id="footer">
+               <footer id="footer">
                 <div class="container-fluid">
                     <!-- social media icons -->
                     <div class="social-icons mt-4" >
@@ -195,67 +190,12 @@
                     <a href="https://www.linkedin.com/in/matteo-marchesani-0a6962260" target="_blank"><i class="fab fa-linkedin"></i></a>
 </div>
 </div>
+
 </footer>
 
-
+<script src="./assets/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script>
-    (function(){
-      emailjs.init("Y2T1vZ5uXHo1PLXJZ");
-    })();
-  </script>
-  <script>
-document.getElementById('submit-btn').addEventListener('click', function(event) {
-  event.preventDefault();
-  // prendi i dati della form
-  var nome = document.getElementById('myForm').elements[0].value.trim();
-  var email = document.getElementById('myForm').elements[1].value.trim();
-  var argomento = document.getElementById('myForm').elements[2].value.trim();
-  var dettagli = document.getElementById('myForm').elements[3].value.trim();
 
-  // verifica che i campi non siano vuoti o contengano solo spazi o caratteri speciali
-  if (nome === '' || !/^[a-zA-Z\s]+$/.test(nome)) {
-    document.getElementById('feedback').innerHTML = "Inserisci un nome valido";
-    return;
-  }
-  if (email === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    document.getElementById('feedback').innerHTML = "Inserisci un'email valida";
-    return;
-  }
-  if (argomento === '' || !/^[a-zA-Z\s]+$/.test(argomento)) {
-    document.getElementById('feedback').innerHTML = "Inserisci un argomento valido";
-    return;
-  }
-  if (dettagli === '' || !/^[[A-Za-zÀ-ÖØ-öø-ÿ\s,.]+$/.test(dettagli)) {
-    document.getElementById('feedback').innerHTML = "Inserisci dei dettagli validi";
-    return;
-  }
+   </body>
 
-  var templateParams = {
-    Nome: nome,
-    Email: email,
-    Argomento: argomento,
-    Dettagli: dettagli
-  };
-
-  emailjs.send('service_tnba52n', 'template_9dcyoxu', templateParams)
-    .then(function(response) {
-      console.log('SUCCESS!', response.status, response.text);
-      document.getElementById('feedback').innerHTML = "Email inviata con successo";
-      document.getElementById('feedback').classList.add('success');
-      document.getElementById('myForm').reset(); // aggiungi questa riga
-    }, function(error) {
-      console.log('FAILED...', error);
-      document.getElementById('feedback').innerHTML = "Errore nell'invio dell'email";
-      document.getElementById('feedback').classList.add('error');
-    });
-});
-
-
-
-
-
-</script>
-    
-  </body>
 </html>
